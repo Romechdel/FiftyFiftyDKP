@@ -51,11 +51,11 @@ function CommDKP_Standby_Handler(text, ...)
 
 			if search and not verify then
 				table.insert(CommDKP:GetTable(CommDKP_Standby, true), CommDKP:GetTable(CommDKP_DKPTable, true)[search[1][1]])
-				response = "CommunityDKP: "..cmd.." "..L["STANDBYWHISPERRESP1"]
+				response = "FiftyFiftyDKP: "..cmd.." "..L["STANDBYWHISPERRESP1"]
 			elseif search and verify then
-				response = "CommunityDKP: "..cmd.." "..L["STANDBYWHISPERRESP2"]
+				response = "FiftyFiftyDKP: "..cmd.." "..L["STANDBYWHISPERRESP2"]
 			else
-				response = "CommunityDKP: "..cmd.." "..L["STANDBYWHISPERRESP3"];
+				response = "FiftyFiftyDKP: "..cmd.." "..L["STANDBYWHISPERRESP3"];
 			end
 		else
 			-- if it's just !standby
@@ -64,11 +64,11 @@ function CommDKP_Standby_Handler(text, ...)
 
 			if search and not verify then
 				table.insert(CommDKP:GetTable(CommDKP_Standby, true), CommDKP:GetTable(CommDKP_DKPTable, true)[search[1][1]])
-				response = "CommunityDKP: "..L["STANDBYWHISPERRESP4"]
+				response = "FiftyFiftyDKP: "..L["STANDBYWHISPERRESP4"]
 			elseif search and verify then
-				response = "CommunityDKP: "..L["STANDBYWHISPERRESP5"]
+				response = "FiftyFiftyDKP: "..L["STANDBYWHISPERRESP5"]
 			else
-				response = "CommunityDKP: "..L["STANDBYWHISPERRESP6"];
+				response = "FiftyFiftyDKP: "..L["STANDBYWHISPERRESP6"];
 			end
 		end
 		if CommDKP:CheckRaidLeader() then 						 -- only raid leader responds to add.
@@ -78,7 +78,7 @@ function CommDKP_Standby_Handler(text, ...)
 
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", function(self, event, msg, ...)		-- suppresses outgoing whisper responses to limit spam
 		if core.StandbyActive and core.DB.defaults.SuppressTells then
-			if strfind(msg, "CommunityDKP: ") then
+			if strfind(msg, "FiftyFiftyDKP: ") then
 				return true
 			end
 		end

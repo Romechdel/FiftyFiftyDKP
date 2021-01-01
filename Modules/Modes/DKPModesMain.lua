@@ -50,7 +50,7 @@ function CommDKP:DKPModes_Main()
   end
 
 
-  f.DKPModesMain.ModesDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.ModesDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
 
   -- Create and bind the initialization function to the dropdown menu
   UIDropDownMenu_Initialize(f.DKPModesMain.ModesDropDown, function(self, level, menuList)
@@ -218,7 +218,7 @@ function CommDKP:DKPModes_Main()
   f.DKPModesMain.ModeHeader:SetText(L["DKPMODES"])
 
   -- Rounding DROPDOWN box 
-  f.DKPModesMain.RoundDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.RoundDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
 
   -- Create and bind the initialization function to the dropdown menu
   UIDropDownMenu_Initialize(f.DKPModesMain.RoundDropDown, function(self, level, menuList)
@@ -267,7 +267,7 @@ function CommDKP:DKPModes_Main()
   f.DKPModesMain.RoundHeader:SetText(L["DKPROUNDING"])
 
   -- MAX Bid button behavior
-  f.DKPModesMain.MaxBidBehaviorDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.MaxBidBehaviorDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
 
   -- Create and bind the initialization function to the dropdown menu
   UIDropDownMenu_Initialize(f.DKPModesMain.MaxBidBehaviorDropDown, function(self, level, menuList)
@@ -374,7 +374,7 @@ function CommDKP:DKPModes_Main()
     f.DKPModesMain.AntiSnipe.Header:SetText(L["ANTISNIPE"])
 
   -- Channels DROPDOWN box 
-  f.DKPModesMain.ChannelsDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.ChannelsDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
 
   -- Create and bind the initialization function to the dropdown menu
   UIDropDownMenu_Initialize(f.DKPModesMain.ChannelsDropDown, function(self, level, menuList)
@@ -426,7 +426,7 @@ function CommDKP:DKPModes_Main()
 
   -- Cost Auto Update Value DROPDOWN box 
   if not core.DB.modes.CostSelection then core.DB.modes.CostSelection = "Second Bidder" end
-  f.DKPModesMain.CostSelection = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.CostSelection = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
   f.DKPModesMain.CostSelection:SetPoint("TOPLEFT", f.DKPModesMain.ChannelsDropDown, "BOTTOMLEFT", 0, -10)
 
   local LocalCostSel;
@@ -546,7 +546,7 @@ function CommDKP:DKPModes_Main()
     end
 
     -- ZeroSum Type DROPDOWN box 
-  f.DKPModesMain.ZeroSumType = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.ZeroSumType = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
 
   -- Create and bind the initialization function to the dropdown menu
   UIDropDownMenu_Initialize(f.DKPModesMain.ZeroSumType, function(self, level, menuList)
@@ -610,7 +610,7 @@ function CommDKP:DKPModes_Main()
   end
 
   -- Item Cost Value DROPDOWN box 
-  f.DKPModesMain.ItemCostDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "CommunityDKPUIDropDownMenuTemplate")
+  f.DKPModesMain.ItemCostDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f.DKPModesMain, "FiftyFiftyDKPUIDropDownMenuTemplate")
 
   -- Create and bind the initialization function to the dropdown menu
   UIDropDownMenu_Initialize(f.DKPModesMain.ItemCostDropDown, function(self, level, menuList)

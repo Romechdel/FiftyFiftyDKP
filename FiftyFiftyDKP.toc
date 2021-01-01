@@ -1,12 +1,10 @@
-## Interface: 11305
-## Title: |cff9900ffCommunity|r |cff595959DKP|r
-## Author: Vapok-BloodsailBuccaneers
-## Notes: Feature-rich DKP Management Tool 
-## Version: 3.2.3
+## Interface: 11306
+## Title: |c003eff40Fifty|r/|c003eff40Fifty|r DKP
+## Author: Romechdel
+## Notes: Split Guild Raiding DKP Management Tool 
+## Version: 1.0.0
 ## DefaultState: enabled
 ## SavedVariables: CommDKP_DB, CommDKP_Loot, CommDKP_DKPTable, CommDKP_DKPHistory, CommDKP_MinBids, CommDKP_MaxBids, CommDKP_Whitelist, CommDKP_Standby, CommDKP_Archive, CommDKP_Profiles
-
-
 
 Localization\Localization.en.lua
 Localization\Localization.cn.lua
@@ -22,7 +20,7 @@ Modules\Sync.lua
 Modules\comm.lua
 Modules\Standby.lua
 Modules\Bidding.lua
-CommunityDKP.lua
+FiftyFiftyDKP.lua
 Modules\AutoAward.lua
 Data\TableUpgrades.lua
 init.lua
@@ -38,7 +36,7 @@ Modules\ClassGraph.lua
 Modules\Options.lua
 TableFunctions.lua
 XMLFunctions.lua
-CommunityDKP.xml
+FiftyFiftyDKP.xml
 Modules\DKPModes.lua
 Modules\Modes\DKPModesMain.lua
 Modules\Modes\DKPModesMisc.lua

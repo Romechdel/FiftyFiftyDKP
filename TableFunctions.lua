@@ -655,7 +655,7 @@ local function CreateRow(parent, id) -- Create 3 buttons for each row in the lis
 		local f = CreateFrame("Button", "$parentLine"..id, parent)
 		f.DKPInfo = {}
 		f:SetSize(core.TableWidth, core.TableRowHeight)
-		f:SetHighlightTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\ListBox-Highlight");
+		f:SetHighlightTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\ListBox-Highlight");
 		f:SetNormalTexture("Interface\\COMMON\\talent-blue-glow")
 		f:GetNormalTexture():SetAlpha(0.2)
 		f:SetScript("OnClick", DKPTable_OnClick)
@@ -711,7 +711,7 @@ function CommDKP:DKPTable_Update()
 	end
 
 	if core.RepairWorking then
-		print("[CommunityDKP] DKP Table Repair Started");
+		print("[FiftyFiftyDKP] DKP Table Repair Started");
 		for i=1, #CommDKP:GetTable(CommDKP_DKPTable, true) do
 			local record = CommDKP:GetTable(CommDKP_DKPTable, true)[i];
 			local bad = false;
@@ -725,7 +725,7 @@ function CommDKP:DKPTable_Update()
 				tremove(core.WorkingTable, i)
 			end
 		end
-		print("[CommunityDKP] DKP Table Repair Complete");
+		print("[FiftyFiftyDKP] DKP Table Repair Complete");
 		core.RepairWorking = false;
 	end
 
@@ -805,9 +805,9 @@ function CommDKP:DKPTable_Update()
 			local CheckAdjusted = core.WorkingTable[index].dkp - core.WorkingTable[index].previous_dkp;
 			if(CheckAdjusted > 0) then 
 				CheckAdjusted = strjoin("", "+", CheckAdjusted) 
-				row.DKPInfo[3].adjustedArrow:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\green-up-arrow.png");
+				row.DKPInfo[3].adjustedArrow:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\green-up-arrow.png");
 			elseif (CheckAdjusted < 0) then
-				row.DKPInfo[3].adjustedArrow:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\red-down-arrow.png");
+				row.DKPInfo[3].adjustedArrow:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\red-down-arrow.png");
 			else
 				row.DKPInfo[3].adjustedArrow:SetTexture(nil);
 			end        
@@ -850,7 +850,7 @@ function CommDKP:DKPTable_Update()
 				CommDKP.DKPTable.Rows[i]:SetNormalTexture("Interface\\COMMON\\talent-blue-glow")
 				CommDKP.DKPTable.Rows[i]:GetNormalTexture():SetAlpha(0.2)
 			else
-				CommDKP.DKPTable.Rows[i]:SetNormalTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\ListBox-Highlight")
+				CommDKP.DKPTable.Rows[i]:SetNormalTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\ListBox-Highlight")
 				CommDKP.DKPTable.Rows[i]:GetNormalTexture():SetAlpha(0.7)
 			end
 			if core.WorkingTable[index].player == UnitName("player") then
@@ -907,7 +907,7 @@ function CommDKP:DKPTable_Create()
 	CommDKP.DKPTable:SetPoint("LEFT", 20, 3)
 	CommDKP.DKPTable:SetBackdrop( {
 		bgFile = "Textures\\white.blp", tile = true,                -- White backdrop allows for black background with 1.0 alpha on low alpha containers
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
 		insets = { left = 0, right = 0, top = 0, bottom = 0 }
 	});
 	CommDKP.DKPTable:SetBackdropColor(0,0,0,0.4);
@@ -945,5 +945,5 @@ function CommDKP:DKPTable_Create()
 	CommDKP.DKPTable.SeedVerifyIcon:SetPoint("TOPLEFT", CommDKP.DKPTable.SeedVerify, "TOPLEFT", 0, 0);
 	CommDKP.DKPTable.SeedVerifyIcon:SetColorTexture(0, 0, 0, 1)
 	CommDKP.DKPTable.SeedVerifyIcon:SetSize(18, 18);
-	CommDKP.DKPTable.SeedVerifyIcon:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\out-of-date")
+	CommDKP.DKPTable.SeedVerifyIcon:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\out-of-date")
 end

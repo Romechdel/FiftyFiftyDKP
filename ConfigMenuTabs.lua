@@ -126,7 +126,7 @@ function CommDKP:ConfigMenuTabs()
 	CommDKP.UIConfig.TabMenu:SetPoint("TOPRIGHT", CommDKP.UIConfig, "TOPRIGHT", -25, -25); --Moves the entire tabframe (defaults -25, -25)
 	CommDKP.UIConfig.TabMenu:SetSize(535, 510);  --default: 477,510
 	CommDKP.UIConfig.TabMenu:SetBackdrop( {
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,  
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,  
 		insets = { left = 0, right = 0, top = 0, bottom = 0 }
 	});
 	CommDKP.UIConfig.TabMenu:SetBackdropColor(0,0,0,0.9);
@@ -136,7 +136,7 @@ function CommDKP:ConfigMenuTabs()
 	CommDKP.UIConfig.TabMenuBG:SetColorTexture(0, 0, 0, 1)
 	CommDKP.UIConfig.TabMenuBG:SetPoint("TOPLEFT", CommDKP.UIConfig.TabMenu, "TOPLEFT", 2, -2);
 	CommDKP.UIConfig.TabMenuBG:SetSize(536, 511);
-	CommDKP.UIConfig.TabMenuBG:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\menu-bg");
+	CommDKP.UIConfig.TabMenuBG:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\menu-bg");
 
 	-- TabMenu ScrollFrame and ScrollBar
 	CommDKP.UIConfig.TabMenu.ScrollFrame = CreateFrame("ScrollFrame", nil, CommDKP.UIConfig.TabMenu, "UIPanelScrollFrameTemplate");
@@ -220,7 +220,7 @@ function CommDKP:ConfigMenuTabs()
 	CommDKP.ConfigTab1.checkBtn[9]:SetPoint("BOTTOMRIGHT", CommDKP.ConfigTab1.checkBtn[2], "TOPLEFT", 50, 0);
 	CommDKP.ConfigTab1.checkBtn[9].text:SetText("|cff5151de"..L["ALLCLASSES"].."|r");
 	CommDKP.ConfigTab1.checkBtn[10]:SetPoint("TOPLEFT", CommDKP.ConfigTab1.checkBtn[5], "BOTTOMLEFT", 0, 0);
-	CommDKP.ConfigTab1.checkBtn[10].text:SetText("|cff5151de"..L["INPARTYRAID"].."|r");         -- executed in filterDKPTable (CommunityDKP.lua)
+	CommDKP.ConfigTab1.checkBtn[10].text:SetText("|cff5151de"..L["INPARTYRAID"].."|r");         -- executed in filterDKPTable (FiftyFiftyDKP.lua)
 
 	CommDKP.ConfigTab1.checkBtn[11] = CreateFrame("CheckButton", nil, CommDKP.ConfigTab1, "UICheckButtonTemplate");
 	CommDKP.ConfigTab1.checkBtn[11]:SetID(11)

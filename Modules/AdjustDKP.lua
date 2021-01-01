@@ -141,7 +141,7 @@ local function RaidTimerPopout_Create()
 	    CommDKP.RaidTimerPopout:SetSize(100, 50);
 	    CommDKP.RaidTimerPopout:SetBackdrop( {
 	      bgFile = "Textures\\white.blp", tile = true,                -- White backdrop allows for black background with 1.0 alpha on low alpha containers
-	      edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3,  
+	      edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3,  
 	      insets = { left = 0, right = 0, top = 0, bottom = 0 }
 	    });
 	    CommDKP.RaidTimerPopout:SetBackdropColor(0,0,0,0.9);
@@ -159,7 +159,7 @@ local function RaidTimerPopout_Create()
 	    CommDKP.RaidTimerPopout.closeContainer:SetPoint("CENTER", CommDKP.RaidTimerPopout, "TOPRIGHT", -8, -4)
 	    CommDKP.RaidTimerPopout.closeContainer:SetBackdrop({
 	      bgFile   = "Textures\\white.blp", tile = true,
-	      edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+	      edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 	    });
 	    CommDKP.RaidTimerPopout.closeContainer:SetBackdropColor(0,0,0,0.9)
 	    CommDKP.RaidTimerPopout.closeContainer:SetBackdropBorderColor(1,1,1,0.2)
@@ -200,7 +200,7 @@ function CommDKP:AdjustDKPTab_Create()
 
 	-- Reason DROPDOWN box 
 	-- Create the dropdown, and configure its appearance
-	CommDKP.ConfigTab2.reasonDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.ConfigTab2, "CommunityDKPUIDropDownMenuTemplate")
+	CommDKP.ConfigTab2.reasonDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.ConfigTab2, "FiftyFiftyDKPUIDropDownMenuTemplate")
 	CommDKP.ConfigTab2.reasonDropDown:SetPoint("TOPLEFT", CommDKP.ConfigTab2.description, "BOTTOMLEFT", -23, -60)
 	UIDropDownMenu_SetWidth(CommDKP.ConfigTab2.reasonDropDown, 150)
 	UIDropDownMenu_SetText(CommDKP.ConfigTab2.reasonDropDown, L["SELECTREASON"])
@@ -281,7 +281,7 @@ function CommDKP:AdjustDKPTab_Create()
 	CommDKP.ConfigTab2.otherReason:SetSize(225, 24)
 	CommDKP.ConfigTab2.otherReason:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 	});
 	CommDKP.ConfigTab2.otherReason:SetBackdropColor(0,0,0,0.9)
 	CommDKP.ConfigTab2.otherReason:SetBackdropBorderColor(1,1,1,0.6)
@@ -309,7 +309,7 @@ function CommDKP:AdjustDKPTab_Create()
 
 	-- Boss Killed Dropdown - Hidden unless "Boss Kill Bonus" or "New Boss Kill Bonus" is selected
 	-- Killing a boss on the list will auto select that boss
-	CommDKP.ConfigTab2.BossKilledDropdown = CreateFrame("FRAME", "CommDKPBossKilledDropdown", CommDKP.ConfigTab2, "CommunityDKPUIDropDownMenuTemplate")
+	CommDKP.ConfigTab2.BossKilledDropdown = CreateFrame("FRAME", "CommDKPBossKilledDropdown", CommDKP.ConfigTab2, "FiftyFiftyDKPUIDropDownMenuTemplate")
 	CommDKP.ConfigTab2.BossKilledDropdown:SetPoint("TOPLEFT", CommDKP.ConfigTab2.reasonDropDown, "BOTTOMLEFT", 0, 2)
 	CommDKP.ConfigTab2.BossKilledDropdown:Hide()
 	UIDropDownMenu_SetWidth(CommDKP.ConfigTab2.BossKilledDropdown, 210)
@@ -389,7 +389,7 @@ function CommDKP:AdjustDKPTab_Create()
 	CommDKP.ConfigTab2.addDKP:SetSize(100, 24)
 	CommDKP.ConfigTab2.addDKP:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
 	});
 	CommDKP.ConfigTab2.addDKP:SetBackdropColor(0,0,0,0.9)
 	CommDKP.ConfigTab2.addDKP:SetBackdropBorderColor(1,1,1,0.6)
@@ -497,7 +497,7 @@ function CommDKP:AdjustDKPTab_Create()
 	CommDKP.ConfigTab2.decayDKP:SetSize(100, 24)
 	CommDKP.ConfigTab2.decayDKP:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
 	});
 	CommDKP.ConfigTab2.decayDKP:SetBackdropColor(0,0,0,0.9)
 	CommDKP.ConfigTab2.decayDKP:SetBackdropBorderColor(1,1,1,0.6)
@@ -617,7 +617,7 @@ function CommDKP:AdjustDKPTab_Create()
 	CommDKP.ConfigTab2.RaidTimerContainer:SetPoint("RIGHT", CommDKP.ConfigTab2, "RIGHT", -25, -60)
 	CommDKP.ConfigTab2.RaidTimerContainer:SetBackdrop({
       bgFile   = "Textures\\white.blp", tile = true,
-      edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2, 
+      edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2, 
     });
 	CommDKP.ConfigTab2.RaidTimerContainer:SetBackdropColor(0,0,0,0.9)
 	CommDKP.ConfigTab2.RaidTimerContainer:SetBackdropBorderColor(0.12, 0.12, 0.34, 1)
@@ -810,7 +810,7 @@ function CommDKP:AdjustDKPTab_Create()
 		CommDKP.ConfigTab2.RaidTimerContainer.interval:SetSize(60, 24)
 		CommDKP.ConfigTab2.RaidTimerContainer.interval:SetBackdrop({
 			bgFile   = "Textures\\white.blp", tile = true,
-			edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+			edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
 		});
 		CommDKP.ConfigTab2.RaidTimerContainer.interval:SetBackdropColor(0,0,0,0.9)
 		CommDKP.ConfigTab2.RaidTimerContainer.interval:SetBackdropBorderColor(1,1,1,0.6)
@@ -873,7 +873,7 @@ function CommDKP:AdjustDKPTab_Create()
 		CommDKP.ConfigTab2.RaidTimerContainer.bonusvalue:SetSize(60, 24)
 		CommDKP.ConfigTab2.RaidTimerContainer.bonusvalue:SetBackdrop({
 			bgFile   = "Textures\\white.blp", tile = true,
-			edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+			edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
 		});
 		CommDKP.ConfigTab2.RaidTimerContainer.bonusvalue:SetBackdropColor(0,0,0,0.9)
 		CommDKP.ConfigTab2.RaidTimerContainer.bonusvalue:SetBackdropBorderColor(1,1,1,0.6)

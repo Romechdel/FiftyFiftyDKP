@@ -193,12 +193,12 @@ function CommDKP:SortDKPTable(id, reset)        -- reorganizes core.WorkingTable
 	table.sort(core.WorkingTable, function(a, b)
 		-- Validate Data and Fix Discrepencies
 		if a[button.Id] == nil then
-			print("[CommunityDKP] Bad DKP Player Record Found: "..a.player)
+			print("[FiftyFiftyDKP] Bad DKP Player Record Found: "..a.player)
 			core.RepairWorking = true;
 			return false;
 		end
 		if b[button.Id] == nil then
-			print("[CommunityDKP] Bad DKP Player Record Found: "..b.player)
+			print("[FiftyFiftyDKP] Bad DKP Player Record Found: "..b.player)
 			core.RepairWorking = true;
 			return false;
 		end
@@ -244,7 +244,7 @@ function CommDKP:CreateMenu()
 	CommDKP.UIConfig:SetSize(550, 590);
 	CommDKP.UIConfig:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 	});
 	CommDKP.UIConfig:SetBackdropColor(0,0,0,0.8);
 	CommDKP.UIConfig:SetMovable(true);
@@ -267,7 +267,7 @@ function CommDKP:CreateMenu()
 	CommDKP.UIConfig.closeContainer:SetPoint("CENTER", CommDKP.UIConfig, "TOPRIGHT", -4, 0)
 	CommDKP.UIConfig.closeContainer:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 	});
 	CommDKP.UIConfig.closeContainer:SetBackdropColor(0,0,0,0.9)
 	CommDKP.UIConfig.closeContainer:SetBackdropBorderColor(1,1,1,0.2)
@@ -290,7 +290,7 @@ function CommDKP:CreateMenu()
 	CommDKP.DKPTable_Headers:SetPoint("BOTTOMLEFT", CommDKP.DKPTable, "TOPLEFT", 0, 1)
 	CommDKP.DKPTable_Headers:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2, 
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2, 
 	});
 	CommDKP.DKPTable_Headers:SetBackdropColor(0,0,0,0.8);
 	CommDKP.DKPTable_Headers:SetBackdropBorderColor(1,1,1,0.5)
@@ -332,7 +332,7 @@ function CommDKP:CreateMenu()
 	SortButtons.class.t:SetText(L["CLASS"]); --]]
 
 	-- center column dropdown (class, rank, spec etc..)
-	SortButtons.class.t = CreateFrame("FRAME", "CommDKPSortColDropdown", SortButtons.class, "CommunityDKPTableHeaderDropDownMenuTemplate")
+	SortButtons.class.t = CreateFrame("FRAME", "CommDKPSortColDropdown", SortButtons.class, "FiftyFiftyDKPTableHeaderDropDownMenuTemplate")
 	SortButtons.class.t:SetPoint("CENTER", SortButtons.class, "CENTER", 4, -3)
 	UIDropDownMenu_JustifyText(SortButtons.class.t, "CENTER")
 	UIDropDownMenu_SetWidth(SortButtons.class.t, 80)
@@ -402,7 +402,7 @@ function CommDKP:CreateMenu()
 	CommDKP.UIConfig.search:SetSize(140, 24)
 	CommDKP.UIConfig.search:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 	});
 	CommDKP.UIConfig.search:SetBackdropColor(0,0,0,0.9)
 	CommDKP.UIConfig.search:SetBackdropBorderColor(1,1,1,0.6)
@@ -459,7 +459,7 @@ function CommDKP:CreateMenu()
 	-- Team view changer Drop Down
 	------------------------------
 
-		CommDKP.UIConfig.TeamViewChangerDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.UIConfig, "CommunityDKPUIDropDownMenuTemplate")
+		CommDKP.UIConfig.TeamViewChangerDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.UIConfig, "FiftyFiftyDKPUIDropDownMenuTemplate")
 		--CommDKP.ConfigTab3.TeamManagementContainer.TeamListDropDown:ClearAllPoints()
 		CommDKP.UIConfig.TeamViewChangerDropDown:SetPoint("BOTTOMLEFT", CommDKP.UIConfig, "BOTTOMLEFT", 340, 4)
 		-- tooltip on mouseOver
@@ -547,7 +547,7 @@ function CommDKP:CreateMenu()
 	CommDKP.UIConfig.expandtab:SetColorTexture(0, 0, 0, 1)
 	CommDKP.UIConfig.expandtab:SetPoint("CENTER", CommDKP.UIConfig.expand, "CENTER");
 	CommDKP.UIConfig.expandtab:SetSize(15, 60);
-	CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\expand-arrow.tga");
+	CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\expand-arrow.tga");
 
 	CommDKP.UIConfig.expand.trigger = CreateFrame("Button", "$ParentCollapseExpandButton", CommDKP.UIConfig.expand)
 	CommDKP.UIConfig.expand.trigger:SetSize(15, 60)
@@ -556,11 +556,11 @@ function CommDKP:CreateMenu()
 		if core.ShowState == false then
 			CommDKP.UIConfig:SetWidth(1106)
 			CommDKP.UIConfig.TabMenu:Show()
-			CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\collapse-arrow");
+			CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\collapse-arrow");
 		else
 			CommDKP.UIConfig:SetWidth(550)
 			CommDKP.UIConfig.TabMenu:Hide()
-			CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\expand-arrow");
+			CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\expand-arrow");
 		end
 		PlaySound(62540)
 		core.ShowState = not core.ShowState
@@ -571,7 +571,7 @@ function CommDKP:CreateMenu()
 	CommDKP.UIConfig.TitleBar:SetPoint("BOTTOM", SortButtons.class, "TOP", 0, 10)
 	CommDKP.UIConfig.TitleBar:SetBackdrop({
 		bgFile   = "Textures\\white.blp", tile = true,
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 	});
 	CommDKP.UIConfig.TitleBar:SetBackdropColor(0,0,0,0.9)
 	CommDKP.UIConfig.TitleBar:SetSize(166, 54)
@@ -581,7 +581,7 @@ function CommDKP:CreateMenu()
 	CommDKP.UIConfig.Title:SetColorTexture(0, 0, 0, 1)
 	CommDKP.UIConfig.Title:SetPoint("CENTER", CommDKP.UIConfig.TitleBar, "CENTER");
 	CommDKP.UIConfig.Title:SetSize(160, 48);
-	CommDKP.UIConfig.Title:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\community-dkp.tga");
+	CommDKP.UIConfig.Title:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\fiftyfiftydkp.tga");
 	---------------------------------------
 	-- CHANGE LOG WINDOW
 	---------------------------------------
@@ -592,7 +592,7 @@ function CommDKP:CreateMenu()
 		CommDKP.ChangeLogDisplay:SetSize(600, 100);
 		CommDKP.ChangeLogDisplay:SetBackdrop( {
 			bgFile = "Textures\\white.blp", tile = true,                -- White backdrop allows for black background with 1.0 alpha on low alpha containers
-			edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3,  
+			edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3,  
 			insets = { left = 0, right = 0, top = 0, bottom = 0 }
 		});
 		CommDKP.ChangeLogDisplay:SetBackdropColor(0,0,0,0.9);
@@ -609,7 +609,7 @@ function CommDKP:CreateMenu()
 		CommDKP.ChangeLogDisplay.ChangeLogHeader:ClearAllPoints();
 		CommDKP.ChangeLogDisplay.ChangeLogHeader:SetFontObject("CommDKPLargeLeft")
 		CommDKP.ChangeLogDisplay.ChangeLogHeader:SetPoint("TOPLEFT", CommDKP.ChangeLogDisplay, "TOPLEFT", 10, -10);
-		CommDKP.ChangeLogDisplay.ChangeLogHeader:SetText("CommunityDKP Change Log");
+		CommDKP.ChangeLogDisplay.ChangeLogHeader:SetText("FiftyFiftyDKP Change Log");
 
 		CommDKP.ChangeLogDisplay.Notes = CommDKP.ChangeLogDisplay:CreateFontString(nil, "OVERLAY")   -- Filters header
 		CommDKP.ChangeLogDisplay.Notes:ClearAllPoints();
@@ -635,7 +635,7 @@ function CommDKP:CreateMenu()
 		CommDKP.ChangeLogDisplay.closeContainer:SetPoint("CENTER", CommDKP.ChangeLogDisplay, "TOPRIGHT", -4, 0)
 		CommDKP.ChangeLogDisplay.closeContainer:SetBackdrop({
 			bgFile   = "Textures\\white.blp", tile = true,
-			edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+			edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 		});
 		CommDKP.ChangeLogDisplay.closeContainer:SetBackdropColor(0,0,0,0.9)
 		CommDKP.ChangeLogDisplay.closeContainer:SetBackdropBorderColor(1,1,1,0.2)

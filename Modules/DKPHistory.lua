@@ -77,7 +77,7 @@ function CommDKP:DKPHistoryFilterBox_Create()
 
 	-- Create the dropdown, and configure its appearance
 	if not filterDropdown then
-		filterDropdown = CreateFrame("FRAME", "CommDKPDKPHistoryFilterNameDropDown", CommDKP.ConfigTab6, "CommunityDKPUIDropDownMenuTemplate")
+		filterDropdown = CreateFrame("FRAME", "CommDKPDKPHistoryFilterNameDropDown", CommDKP.ConfigTab6, "FiftyFiftyDKPUIDropDownMenuTemplate")
 	end
 
 	-- Create and bind the initialization function to the dropdown menu
@@ -505,7 +505,7 @@ function CommDKP:DKPHistory_Update(reset)
 			HistTimer = 0
 
 			if not CommDKP.ConfigTab6.loadMoreBtn then
-				CommDKP.ConfigTab6.loadMoreBtn = CreateFrame("Button", nil, CommDKP.ConfigTab6, "CommunityDKPButtonTemplate")
+				CommDKP.ConfigTab6.loadMoreBtn = CreateFrame("Button", nil, CommDKP.ConfigTab6, "FiftyFiftyDKPButtonTemplate")
 				CommDKP.ConfigTab6.loadMoreBtn:SetSize(100, 30);
 				CommDKP.ConfigTab6.loadMoreBtn:SetText(string.format(L["LOAD50MORE"], btnText).."...");
 				CommDKP.ConfigTab6.loadMoreBtn:GetFontString():SetTextColor(1, 1, 1, 1)

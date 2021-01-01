@@ -122,7 +122,7 @@ function CommDKP.Sync:OnCommReceived(prefix, message, distribution, sender)
       return;
     end
 
-    -- decompresed is not null meaning data is coming from 2.3.0 or CommunityDKP
+    -- decompresed is not null meaning data is coming from 2.3.0 or FiftyFiftyDKP
     success, _objReceived = LibAceSerializer:Deserialize(decompressed);
     
     --[[ 
@@ -327,15 +327,15 @@ function CommDKP.Sync:OnCommReceived(prefix, message, distribution, sender)
         elseif prefix == "CommDKPPreBroad" then
           if sender ~= UnitName("player") then
             if _objReceived.Data == "CommDKPAllTabs" then
-              print("[CommunityDKP] COMMS: Full broadcast started by "..sender.." for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
+              print("[FiftyFiftyDKP] COMMS: Full broadcast started by "..sender.." for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
             elseif _objReceived.Data == "CommDKPMerge" then
-              print("[CommunityDKP] COMMS: 2-week merge broadcast started by "..sender.." for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
+              print("[FiftyFiftyDKP] COMMS: 2-week merge broadcast started by "..sender.." for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
             end
           else
             if _objReceived.Data == "CommDKPAllTabs" then
-              print("[CommunityDKP] COMMS: You started Full Broadcast for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
+              print("[FiftyFiftyDKP] COMMS: You started Full Broadcast for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
             elseif _objReceived.Data == "CommDKPMerge" then
-              print("[CommunityDKP] COMMS: You started 2-week broadcast for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
+              print("[FiftyFiftyDKP] COMMS: You started 2-week broadcast for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
             end
           end
         elseif (prefix == "CommDKPCommand") then
@@ -428,7 +428,7 @@ function CommDKP.Sync:OnCommReceived(prefix, message, distribution, sender)
           prefix == "CommDKPAllTabs" or prefix == "CommDKPBidShare" or prefix == "CommDKPMerge" or prefix == "CommDKPSetPrice" or prefix == "CommDKPMaxBid" or prefix == "CommDKPAddUsers" then
 
             if prefix == "CommDKPAllTabs" then   -- receives full table broadcast
-              --print("[CommunityDKP] COMMS: Full Broadcast Receive Started for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
+              --print("[FiftyFiftyDKP] COMMS: Full Broadcast Receive Started for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
 
               table.sort(_objReceived.Data.Loot, function(a, b)
                 return a["date"] > b["date"]
@@ -524,7 +524,7 @@ function CommDKP.Sync:OnCommReceived(prefix, message, distribution, sender)
                 CommDKP:StatusVerify_Update()
               end
               
-              print("[CommunityDKP] COMMS: Full Broadcast Receive Finished for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
+              print("[FiftyFiftyDKP] COMMS: Full Broadcast Receive Finished for team "..CommDKP:GetTeamName(_objReceived.CurrentTeam));
               return
             elseif prefix == "CommDKPMerge" then
               for i=1, #_objReceived.Data.DKP do
@@ -993,7 +993,7 @@ function CommDKP.Sync:SendData(prefix, data, target, targetTeam)
 
   --AceComm Communication doesn't work if the prefix is longer than 15.  And if sucks if you try.
   if #prefix > 15 then
-    CommDKP:Print("CommunityDKP Error: Prefix ["..prefix.."] is longer than 15. Please shorten.");
+    CommDKP:Print("FiftyFiftyDKP Error: Prefix ["..prefix.."] is longer than 15. Please shorten.");
     return;
   end
 
@@ -1039,9 +1039,9 @@ function CommDKP.Sync:SendData(prefix, data, target, targetTeam)
     if prefix == "CommDKPAllTabs" or prefix == "CommDKPMerge" then
       if target then
         if prefix == "CommDKPAllTabs" then
-          print("[CommunityDKP] COMMS: You started Full Broadcast for team "..CommDKP:GetTeamName(CommDKP:GetCurrentTeamIndex()).." to player "..target);
+          print("[FiftyFiftyDKP] COMMS: You started Full Broadcast for team "..CommDKP:GetTeamName(CommDKP:GetCurrentTeamIndex()).." to player "..target);
         elseif prefix == "CommDKPMerge" then
-          print("[CommunityDKP] COMMS: You started 2-week broadcast for team "..CommDKP:GetTeamName(CommDKP:GetCurrentTeamIndex()).." to player "..target);
+          print("[FiftyFiftyDKP] COMMS: You started 2-week broadcast for team "..CommDKP:GetTeamName(CommDKP:GetCurrentTeamIndex()).." to player "..target);
         end
         CommDKP.Sync:SendCommMessage(prefix, _compressedObj, "WHISPER", target, "NORMAL", CommDKP_BroadcastFull_Callback, nil)
       else

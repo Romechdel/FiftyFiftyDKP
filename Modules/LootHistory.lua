@@ -174,7 +174,7 @@ function CommDKP:CreateSortBox()
 
 	-- Create the dropdown, and configure its appearance
 	if not sortDropdown then
-		sortDropdown = CreateFrame("FRAME", "CommDKPConfigFilterNameDropDown", CommDKP.ConfigTab5, "CommunityDKPUIDropDownMenuTemplate")
+		sortDropdown = CreateFrame("FRAME", "CommDKPConfigFilterNameDropDown", CommDKP.ConfigTab5, "FiftyFiftyDKPUIDropDownMenuTemplate")
 	end
 
 	-- Create and bind the initialization function to the dropdown menu

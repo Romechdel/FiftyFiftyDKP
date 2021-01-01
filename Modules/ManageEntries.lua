@@ -642,7 +642,7 @@ function CommDKP:ManageEntries()
 	----------------------------------
 	-- rank select dropDownMenu
 	----------------------------------
-		CommDKP.ConfigTab3.GuildRankDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.ConfigTab3, "CommunityDKPUIDropDownMenuTemplate")
+		CommDKP.ConfigTab3.GuildRankDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.ConfigTab3, "FiftyFiftyDKPUIDropDownMenuTemplate")
 		CommDKP.ConfigTab3.GuildRankDropDown:SetPoint("TOPLEFT", CommDKP.ConfigTab3.add_raid_to_table, "BOTTOMLEFT", -17, -15)
 		CommDKP.ConfigTab3.GuildRankDropDown:SetScript("OnEnter", 
 			function(self)
@@ -1014,7 +1014,7 @@ function CommDKP:ManageEntries()
 		----------------------------------
 		-- Drop down with lists of teams 
 		----------------------------------
-			CommDKP.ConfigTab3.TeamListDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.ConfigTab3, "CommunityDKPUIDropDownMenuTemplate")
+			CommDKP.ConfigTab3.TeamListDropDown = CreateFrame("FRAME", "CommDKPConfigReasonDropDown", CommDKP.ConfigTab3, "FiftyFiftyDKPUIDropDownMenuTemplate")
 			--CommDKP.ConfigTab3.TeamManagementContainer.TeamListDropDown:ClearAllPoints()
 			CommDKP.ConfigTab3.TeamListDropDown:SetPoint("BOTTOMLEFT", CommDKP.ConfigTab3.TeamHeader, "BOTTOMLEFT", 0, -50)
 			-- tooltip on mouseOver
@@ -1081,7 +1081,7 @@ function CommDKP:ManageEntries()
 			CommDKP.ConfigTab3.TeamNameInput:SetPoint("TOPRIGHT", CommDKP.ConfigTab3.TeamListDropDown, "TOPRIGHT", 160, 0)
 			CommDKP.ConfigTab3.TeamNameInput:SetBackdrop({
 				bgFile   = "Textures\\white.blp", tile = true,
-				edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile",
+				edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile",
 				tile = true, 
 				tileSize = 32, 
 				edgeSize = 2

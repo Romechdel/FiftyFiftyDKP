@@ -2,13 +2,13 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
  	<!-- Custom Highlight Template -->
- 	<Texture name="CommunityDKPButtonHighlightTexture" file="Interface\AddOns\CommunityDKP\Media\Textures\CommunityDKP-Button-Highlight" alphaMode="ADD" virtual="true">
+ 	<Texture name="FiftyFiftyDKPButtonHighlightTexture" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\FiftyFiftyDKP-Button-Highlight" alphaMode="ADD" virtual="true">
 		<TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
 	</Texture>
 	<!-- CommDKP Fonts -->
 	<FontFamily  name="CommDKPTiny" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\homizio_bold.ttf" height="10"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\homizio_bold.ttf" height="10"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="10" outline="NORMAL"/>
@@ -25,7 +25,7 @@
 	</FontFamily>
 	<FontFamily  name="CommDKPTinyOutline" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\homizio_bold.ttf" height="10" outline="NORMAL"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\homizio_bold.ttf" height="10" outline="NORMAL"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="10" outline="NORMAL"/>
@@ -42,7 +42,7 @@
 	</FontFamily>
 	<FontFamily  name="CommDKPSmall" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\homizio_bold.ttf" height="12"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\homizio_bold.ttf" height="12"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="12" outline="NORMAL"/>
@@ -59,7 +59,7 @@
 	</FontFamily>
 	<FontFamily  name="CommDKPSmallOutline" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\homizio_bold.ttf" height="12" outline="NORMAL"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\homizio_bold.ttf" height="12" outline="NORMAL"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="12" outline="NORMAL"/>
@@ -76,7 +76,7 @@
 	</FontFamily>
 	<FontFamily  name="CommDKPNormal" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\homizio_bold.ttf" height="13"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\homizio_bold.ttf" height="13"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="13" outline="NORMAL"/>
@@ -93,7 +93,7 @@
 	</FontFamily>
 	<FontFamily  name="CommDKPNormalOutline" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\homizio_bold.ttf" height="13" outline="NORMAL"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\homizio_bold.ttf" height="13" outline="NORMAL"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="13" outline="NORMAL"/>
@@ -110,7 +110,7 @@
 	</FontFamily>
 	<FontFamily  name="CommDKPLarge" virtual="true">
 		<Member alphabet="roman">
-			<Font font="Interface\AddOns\CommunityDKP\Media\Fonts\uf_font.ttf" height="24"/>
+			<Font font="Interface\AddOns\FiftyFiftyDKP\Media\Fonts\uf_font.ttf" height="24"/>
 		</Member>
 		<Member alphabet="korean">
 			<Font font="Fonts\2002.TTF" height="24" outline="NORMAL"/>
@@ -150,7 +150,7 @@
 	<Font name="CommDKPLargeLeft" inherits="CommDKPLarge" justifyH="LEFT" virtual="true"/>
 	<Font name="CommDKPLargeRight" inherits="CommDKPLarge" justifyH="RIGHT" virtual="true"/>
  	<!-- Button Frame Template -->
- 	<Button name="CommunityDKPUIPanelButtonNoTooltipTemplate" virtual="true">
+ 	<Button name="FiftyFiftyDKPUIPanelButtonNoTooltipTemplate" virtual="true">
 		<Size x="40" y="22"/>
 		<Layers>
 			<Layer level="BACKGROUND">
@@ -181,20 +181,20 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad function="CommunityDKPButton_OnLoad"/>
-			<OnMouseDown function="CommunityDKPButton_OnMouseDown"/>
-			<OnMouseUp function="CommunityDKPButton_OnMouseUp"/>
-			<OnShow function="CommunityDKPButton_OnShow"/>
-			<OnDisable function="CommunityDKPButton_OnDisable"/>
-			<OnEnable function="CommunityDKPButton_OnEnable"/>
+			<OnLoad function="FiftyFiftyDKPButton_OnLoad"/>
+			<OnMouseDown function="FiftyFiftyDKPButton_OnMouseDown"/>
+			<OnMouseUp function="FiftyFiftyDKPButton_OnMouseUp"/>
+			<OnShow function="FiftyFiftyDKPButton_OnShow"/>
+			<OnDisable function="FiftyFiftyDKPButton_OnDisable"/>
+			<OnEnable function="FiftyFiftyDKPButton_OnEnable"/>
 		</Scripts>
 		<ButtonText name="$parentText" parentKey="Text"/>
 		<NormalFont style="GameFontNormal"/>
 		<HighlightFont style="GameFontHighlight"/>
 		<DisabledFont style="GameFontDisable"/>
-		<HighlightTexture inherits="CommunityDKPButtonHighlightTexture"/>
+		<HighlightTexture inherits="FiftyFiftyDKPButtonHighlightTexture"/>
 	</Button>
-	<Button name="CommunityDKPButtonTemplate" inherits="CommunityDKPUIPanelButtonNoTooltipTemplate" virtual="true">
+	<Button name="FiftyFiftyDKPButtonTemplate" inherits="FiftyFiftyDKPUIPanelButtonNoTooltipTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="144" y="21"/>
 		</Size>
@@ -204,13 +204,13 @@
 	</Button>
 	
 	<!-- Drop Down Menu Frame Template -->
-	<Frame name="CommunityDKPUIDropDownMenuTemplate" virtual="true">
+	<Frame name="FiftyFiftyDKPUIDropDownMenuTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="40" y="32"/>
 		</Size>
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture name="$parentLeft" parentKey="Left" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Dropdown-Frame">
+				<Texture name="$parentLeft" parentKey="Left" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Dropdown-Frame">
 					<Size>
 						<AbsDimension x="25" y="64"/>
 					</Size>
@@ -223,7 +223,7 @@
 					</Anchors>
 					<TexCoords left="0" right="0.1953125" top="0" bottom="1"/>
 				</Texture>
-				<Texture name="$parentMiddle" parentKey="Middle" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Dropdown-Frame">
+				<Texture name="$parentMiddle" parentKey="Middle" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Dropdown-Frame">
 					<Size>
 						<AbsDimension x="115" y="64"/>
 					</Size>
@@ -232,7 +232,7 @@
 					</Anchors>
 					<TexCoords left="0.1953125" right="0.8046875" top="0" bottom="1"/>
 				</Texture>
-				<Texture name="$parentRight" parentKey="Right" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Dropdown-Frame">
+				<Texture name="$parentRight" parentKey="Right" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Dropdown-Frame">
 					<Size>
 						<AbsDimension x="25" y="64"/>
 					</Size>
@@ -341,13 +341,13 @@
 	</Frame>
 
 	<!-- DKP Table Drop Down Menu Frame Template -->
-	<Frame name="CommunityDKPTableHeaderDropDownMenuTemplate" virtual="true">
+	<Frame name="FiftyFiftyDKPTableHeaderDropDownMenuTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="40" y="32"/>
 		</Size>
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture name="$parentLeft" parentKey="Left" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Dropdown-Frame-Header">
+				<Texture name="$parentLeft" parentKey="Left" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Dropdown-Frame-Header">
 					<Size>
 						<AbsDimension x="25" y="64"/>
 					</Size>
@@ -360,7 +360,7 @@
 					</Anchors>
 					<TexCoords left="0" right="0.1953125" top="0" bottom="1"/>
 				</Texture>
-				<Texture name="$parentMiddle" parentKey="Middle" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Dropdown-Frame-Header">
+				<Texture name="$parentMiddle" parentKey="Middle" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Dropdown-Frame-Header">
 					<Size>
 						<AbsDimension x="115" y="64"/>
 					</Size>
@@ -369,7 +369,7 @@
 					</Anchors>
 					<TexCoords left="0.1953125" right="0.8046875" top="0" bottom="1"/>
 				</Texture>
-				<Texture name="$parentRight" parentKey="Right" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Dropdown-Frame-Header">
+				<Texture name="$parentRight" parentKey="Right" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Dropdown-Frame-Header">
 					<Size>
 						<AbsDimension x="25" y="64"/>
 					</Size>
@@ -483,7 +483,7 @@
         </Size>
         <Layers>
         	<Layer level="BACKGROUND">
-        		<Texture name="$parentLeftDisabled" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Active-Tab">
+        		<Texture name="$parentLeftDisabled" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Active-Tab">
         			<Size>
         				<AbsDimension x="20" y="35"/>
         			</Size>
@@ -496,7 +496,7 @@
         			</Anchors>
 					<TexCoords left="0" right="0.15625" top="0" bottom="0.546875"/>
         		</Texture>
-				<Texture name="$parentMiddleDisabled" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Active-Tab">
+				<Texture name="$parentMiddleDisabled" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Active-Tab">
         			<Size>
         				<AbsDimension x="88" y="35"/>
         			</Size>
@@ -505,7 +505,7 @@
         			</Anchors>
 					<TexCoords left="0.15625" right="0.84375" top="0" bottom="0.546875"/>
         		</Texture>
-				<Texture name="$parentRightDisabled" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Active-Tab">
+				<Texture name="$parentRightDisabled" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Active-Tab">
         			<Size>
         				<AbsDimension x="20" y="35"/>
         			</Size>
@@ -514,7 +514,7 @@
         			</Anchors>
 					<TexCoords left="0.84375" right="1.0" top="0" bottom="0.546875"/>
         		</Texture>
-				<Texture name="$parentLeft" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Inactive-Tab">
+				<Texture name="$parentLeft" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Inactive-Tab">
         			<Size>
         				<AbsDimension x="20" y="47"/>
         			</Size>
@@ -523,7 +523,7 @@
         			</Anchors>
 					<TexCoords left="0" right="0.15625" top="0" bottom="1.0"/>
         		</Texture>
-				<Texture name="$parentMiddle" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Inactive-Tab">
+				<Texture name="$parentMiddle" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Inactive-Tab">
         			<Size>
         				<AbsDimension x="88" y="47"/>
         			</Size>
@@ -532,7 +532,7 @@
 					</Anchors>
 					<TexCoords left="0.15625" right="0.84375" top="0" bottom="1.0"/>
         		</Texture>
-				<Texture name="$parentRight" file="Interface\AddOns\CommunityDKP\Media\Textures\CommDKP-Inactive-Tab">
+				<Texture name="$parentRight" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\CommDKP-Inactive-Tab">
         			<Size>
         				<AbsDimension x="20" y="47"/>
         			</Size>
@@ -616,7 +616,7 @@
 				<AbsValue val="2"/>
 			</EdgeSize>
 		</Backdrop>
-		<ThumbTexture parentKey="Thumb" name="$parentThumb" file="Interface\AddOns\CommunityDKP\Media\Textures\slider-pin">
+		<ThumbTexture parentKey="Thumb" name="$parentThumb" file="Interface\AddOns\FiftyFiftyDKP\Media\Textures\slider-pin">
 			<Size x="16" y="16"/>
 		</ThumbTexture>
 	</Slider>

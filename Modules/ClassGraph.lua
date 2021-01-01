@@ -50,7 +50,7 @@ function CommDKP:ClassGraph()
 		graph.icons[i].bar:SetBackdropBorderColor(1,1,1,0)
   		graph.icons[i].bar:SetSize(BarWidth, perc_height[i])
   		graph.icons[i].bar:SetBackdrop({
-			bgFile   = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\graph-bar", tile = false,
+			bgFile   = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\graph-bar", tile = false,
 			insets = { left = 1, right = 1, top = 1, bottom = 1}
 		});
   		graph.icons[i]:SetTexture("Interface\\GLUES\\CHARACTERCREATE\\UI-CharacterCreate-Classes");

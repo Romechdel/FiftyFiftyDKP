@@ -215,7 +215,7 @@ function CommDKP:ExportBox_Show(text)
 		f.closeContainer:SetPoint("CENTER", f, "TOPRIGHT", -4, 0)
 		f.closeContainer:SetBackdrop({
 			bgFile   = "Textures\\white.blp", tile = true,
-			edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
+			edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3, 
 		});
 		f.closeContainer:SetBackdropColor(0,0,0,0.9)
 		f.closeContainer:SetBackdropBorderColor(1,1,1,0.2)
@@ -276,7 +276,7 @@ function CommDKP:ExportBox_Show(text)
         -- Format DROPDOWN box 
         local CurFormat;
 
-		f.FormatDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f, "CommunityDKPUIDropDownMenuTemplate")
+		f.FormatDropDown = CreateFrame("FRAME", "CommDKPModeSelectDropDown", f, "FiftyFiftyDKPUIDropDownMenuTemplate")
 		f.FormatDropDown:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 20, 55)
 		UIDropDownMenu_SetWidth(f.FormatDropDown, 100)
 		UIDropDownMenu_SetText(f.FormatDropDown, "Select Format")

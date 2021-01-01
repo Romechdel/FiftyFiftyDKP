@@ -33,7 +33,7 @@ CommDKP.Commands = {
         StaticPopup_Show ("SUGGEST_RELOAD")
       end
     else
-      CommDKP:Print("CommunityDKP has not completed initialization.")
+      CommDKP:Print("FiftyFiftyDKP has not completed initialization.")
     end
   end,
   ["reset"] = CommDKP.ResetPosition,
@@ -58,7 +58,7 @@ CommDKP.Commands = {
       end
       CommDKP:BidInterface_Toggle()
     else
-      CommDKP:Print("CommunityDKP has not completed initialization.")
+      CommDKP:Print("FiftyFiftyDKP has not completed initialization.")
     end 
   end,
   ["repairtables"] = function(...)       -- test new features
@@ -128,7 +128,7 @@ CommDKP.Commands = {
         CommDKP:Print(L["NOPERMISSION"])
       end
     else
-      CommDKP:Print("CommunityDKP has not completed initialization.")
+      CommDKP:Print("FiftyFiftyDKP has not completed initialization.")
     end
   end,
   ["help"] = function()
@@ -211,7 +211,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", function(self, event,
 			end
 		end
 	  
-		if strfind(msg, "CommunityDKP: ") == 1 then
+		if strfind(msg, "FiftyFiftyDKP: ") == 1 then
 			return true
 		elseif strfind(msg, L["DKPAVAILABLE"]) ~= nil and strfind(msg, '%[') ~= nil and strfind(msg, '%]') ~= nil then
 			return true
@@ -291,7 +291,7 @@ local function DoGuildUpdate()
 			CommDKP:SortDKPHistoryTable()
 			CommDKP:Print(L["VERSION"].." "..core.MonVersion..", "..L["CREATEDMAINTAIN"].." Vapok@BloodsailBuccaneers-Classic");
 			CommDKP:Print(L["LOADED"].." "..#CommDKP:GetTable(CommDKP_DKPTable, true).." "..L["PLAYERRECORDS"]..", "..#CommDKP:GetTable(CommDKP_Loot, true).." "..L["LOOTHISTRECORDS"].." "..#CommDKP:GetTable(CommDKP_DKPHistory, true).." "..L["DKPHISTRECORDS"]..".");
-			CommDKP:Print(L["USE"].." /dkp ? "..L["SUBMITBUGS"].." @ https://github.com/Vapok/CommunityDKP/issues");
+			CommDKP:Print(L["USE"].." /dkp ? "..L["SUBMITBUGS"].." @ https://github.com/Vapok/FiftyFiftyDKP/issues");
 			CommDKP.Sync:SendData("CommDKPBuild", tostring(core.BuildNumber)) -- broadcasts build number to guild to check if a newer version is available
 			CommDKP:SendTalentsAndRole()
 
@@ -356,7 +356,7 @@ end
 function CommDKP_OnEvent(self, event, arg1, ...)
 
 	if event == "ADDON_LOADED" then
-		if (arg1 ~= "CommunityDKP") then return end
+		if (arg1 ~= "FiftyFiftyDKP") then return end
 		core.IsOfficer = nil
 		core.Initialized = false
 		CommDKP_wait(2, DoInit, event, arg1);
@@ -415,7 +415,7 @@ function CommDKP_OnEvent(self, event, arg1, ...)
 					end
 				end
 			else
-				CommDKP:Print("Event ID: "..arg1.." - > "..boss_name.." Killed. Please report this Event ID at https://www.curseforge.com/wow/addons/communitydkp/issues to update raid event handlers.")
+				CommDKP:Print("Event ID: "..arg1.." - > "..boss_name.." Killed. Please report this Event ID at https://www.curseforge.com/wow/addons/FiftyFiftyDKP/issues to update raid event handlers.")
 			end
 		elseif IsInRaid() then
 			core.DB.bossargs.LastKilledBoss = ...;
@@ -455,7 +455,7 @@ function CommDKP_OnEvent(self, event, arg1, ...)
 		if core.IsOfficer then
 
 			arg1 = strlower(arg1)
-			if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "！dkp") == 1) then
+			if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "ï¼�dkp") == 1) then
 				CommDKP_CHAT_MSG_WHISPER(arg1, ...)
 			elseif string.find(arg1, "!standby") == 1 and core.StandbyActive then
 				CommDKP_Standby_Handler(arg1, ...)
@@ -473,7 +473,7 @@ function CommDKP_OnEvent(self, event, arg1, ...)
 	elseif event == "CHAT_MSG_RAID" or event == "CHAT_MSG_RAID_LEADER" then
 		CommDKP:CheckOfficer()
 		arg1 = strlower(arg1)
-		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "!standby") == 1 or string.find(arg1, "！dkp") == 1) and core.IsOfficer == true then
+		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "!standby") == 1 or string.find(arg1, "ï¼�dkp") == 1) and core.IsOfficer == true then
 			CommDKP_CHAT_MSG_WHISPER(arg1, ...)
 		end
 	elseif event == "UPDATE_INSTANCE_INFO" then
@@ -529,7 +529,7 @@ function CommDKP_OnEvent(self, event, arg1, ...)
 		CommDKP:CheckOfficer()
 		if core.IsOfficer then
 			arg1 = strlower(arg1)
-			if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "！dkp") == 1) and core.DB.modes.channels.guild then
+			if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "ï¼�dkp") == 1) and core.DB.modes.channels.guild then
 				CommDKP_CHAT_MSG_WHISPER(arg1, ...)
 			elseif string.find(arg1, "!standby") == 1 and core.StandbyActive then
 				CommDKP_Standby_Handler(arg1, ...)
@@ -623,7 +623,7 @@ function CommDKP_OnEvent(self, event, arg1, ...)
 end
 
 function CommDKP:OnInitialize(event, name)		-- This is the FIRST function to run on load triggered registered events at bottom of file
-	if (name ~= "CommunityDKP") then return end 
+	if (name ~= "FiftyFiftyDKP") then return end 
 
 	-- allows using left and right buttons to move through chat 'edit' box
 	--[[for i = 1, NUM_CHAT_WINDOWS do
@@ -633,9 +633,8 @@ function CommDKP:OnInitialize(event, name)		-- This is the FIRST function to run
 	----------------------------------
 	-- Register Slash Commands
 	----------------------------------
-	SLASH_CommunityDKP1 = "/dkp";
-	SLASH_CommunityDKP2 = "/CommDKP";
-	SlashCmdList.CommunityDKP = HandleSlashCommands;
+	SLASH_FiftyFiftyDKP1 = "/dkp";
+	SlashCmdList.FiftyFiftyDKP = HandleSlashCommands;
 
 	--[[SLASH_RELOADUI1 = "/rl"; -- new slash command for reloading UI 				-- for debugging
 	SlashCmdList.RELOADUI = ReloadUI;--]]
@@ -1026,26 +1025,26 @@ function CommDKP:MonolithMigration()
 		return false -- Should not happen?! Maybe race condition ...
 	end
 
-	-- MonolithDKP is up & running - CommunityDKP will not initialise
-	CommDKP:Print("Legacy MonolithDKP addon detected - please disable it to continue with CommunityDKP!")
-	local activeCommunity = self:MonolithMigrationDbEntries("CommDKP") -- check if CommunityDKP already has table entries
-	local activeCommunitySchema = CommDKP_DB ~= nil and CommDKP:GetTable(CommDKP_DB, false)["teams"] ~= nil -- check if CommunityDKP finished schema migration
+	-- MonolithDKP is up & running - FiftyFiftyDKP will not initialise
+	CommDKP:Print("Legacy MonolithDKP addon detected - please disable it to continue with FiftyFiftyDKP!")
+	local activeCommunity = self:MonolithMigrationDbEntries("CommDKP") -- check if FiftyFiftyDKP already has table entries
+	local activeCommunitySchema = CommDKP_DB ~= nil and CommDKP:GetTable(CommDKP_DB, false)["teams"] ~= nil -- check if FiftyFiftyDKP finished schema migration
 	local activeMonolith21x = self:MonolithMigrationLegacySeed() > 0 -- check if there are usable MonolithDKP 2.1.x tables available
 	local activeMonolith22x = self:MonolithMigrationDbBuild() > 0 and self:MonolithMigrationDbEntries("MonDKP") -- same for MonolithDKP 2.2.x
 
 	-- check if we should offer migration
 	if not activeCommunity and (activeMonolith21x or activeMonolith21x) then
-		-- CommunityDKP is fresh and there are MonolithDKP 2.1.x or 2.2.x tables available
+		-- FiftyFiftyDKP is fresh and there are MonolithDKP 2.1.x or 2.2.x tables available
 		self:MonolithMigrationLegacyDetected(function() self:MonolithMigrationProcess(false) end)
 	elseif activeCommunity and activeCommunitySchema and activeMonolith21x and IsInGuild() and CommDKP:ValidateSender(UnitName("player")) then
-		-- CommunityDKP already has data we can import MonolithDKP 2.1.x data as a new team
+		-- FiftyFiftyDKP already has data we can import MonolithDKP 2.1.x data as a new team
 		self:MonolithMigrationAsNewTeam(function() self:MonolithMigrationProcess(true) end)
 	else
- 		-- CommunityDKP already has table entries and there is no legacy data to add as an additional team
+ 		-- FiftyFiftyDKP already has table entries and there is no legacy data to add as an additional team
 		self:MonolithMigrationGenericPopup(L["MIGRATIONUNAVAILABLE"])
 	end
 
-	return true -- don't initialise CommunityDKP
+	return true -- don't initialise FiftyFiftyDKP
 end
 
 function CommDKP:MonolithMigrationProcess(asNewTeam)
@@ -1211,7 +1210,7 @@ function CommDKP:MonolithMigrationDbBuild()
 end
 
 function CommDKP:MonolithMigrationDbEntries(prefix)
-	-- returns true if there are already CommunityDKP entries
+	-- returns true if there are already FiftyFiftyDKP entries
 	local findEntryRecursive
 	findEntryRecursive = function(table, entry)
 		if table == nil then

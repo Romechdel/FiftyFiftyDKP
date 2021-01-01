@@ -299,8 +299,8 @@ function CommDKP:WhisperAvailableDKP(name, cmd)
     local search = CommDKP:Table_Search(CommDKP:GetTable(CommDKP_DKPTable, true, teamIndex), cmd, "player")
 
     if search and not playerFound then
-      -- CommunityDKP: Kyliee
-      local playerResponse = "CommunityDKP: "..CommDKP:GetTable(CommDKP_DKPTable, true, teamIndex)[search[1][1]].player;
+      -- FiftyFiftyDKP: Kyliee
+      local playerResponse = "FiftyFiftyDKP: "..CommDKP:GetTable(CommDKP_DKPTable, true, teamIndex)[search[1][1]].player;
       SendChatMessage(playerResponse, "WHISPER", nil, name)
       playerFound = true;
     end
@@ -342,7 +342,7 @@ function CommDKP:WhisperAvailableDKP(name, cmd)
     end
   end
   if not playerFound then
-    response = "CommunityDKP: "..L["PLAYERNOTFOUND"]
+    response = "FiftyFiftyDKP: "..L["PLAYERNOTFOUND"]
     SendChatMessage(response, "WHISPER", nil, name)
   end
   return;
@@ -971,7 +971,7 @@ function CommDKP:CreateTimer()
   f.border:SetFrameLevel(19)
   f.border:SetSize(300, 25);
   f.border:SetBackdrop( {
-    edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
+    edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
     insets = { left = 0, right = 0, top = 0, bottom = 0 }
   });
   f.border:SetBackdropColor(0,0,0,0);
@@ -996,7 +996,7 @@ function CommDKP:CreateTimer()
   f.itemIcon:SetColorTexture(0, 0, 0, 1)
   f.itemIcon:SetSize(25, 25);
 
-  f.OpenBid = CreateFrame("Button", nil, f, "CommunityDKPButtonTemplate")
+  f.OpenBid = CreateFrame("Button", nil, f, "FiftyFiftyDKPButtonTemplate")
   f.OpenBid:SetPoint("RIGHT", f.itemIcon, "LEFT", -5, 0);
   f.OpenBid:SetSize(40,25)
   f.OpenBid:SetText(L["BID"]);
@@ -1024,7 +1024,7 @@ local function BidRow_OnClick(self)
       core.BiddingWindow.bidTable.Rows[i]:SetNormalTexture("Interface\\COMMON\\talent-blue-glow")
       core.BiddingWindow.bidTable.Rows[i]:GetNormalTexture():SetAlpha(0.2)
     end
-      self:SetNormalTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\ListBox-Highlight");
+      self:SetNormalTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\ListBox-Highlight");
       self:GetNormalTexture():SetAlpha(0.7)
 
       if core.DB.modes.costvalue == "Percent" then
@@ -1064,7 +1064,7 @@ local function BidWindowCreateRow(parent, id) -- Create 3 buttons for each row i
     local f = CreateFrame("Button", "$parentLine"..id, parent)
     f.Strings = {}
     f:SetSize(width, height)
-    f:SetHighlightTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\ListBox-Highlight");
+    f:SetHighlightTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\ListBox-Highlight");
     f:SetNormalTexture("Interface\\COMMON\\talent-blue-glow")
     f:GetNormalTexture():SetAlpha(0.2)
     f:SetScript("OnClick", BidRow_OnClick)
@@ -1204,7 +1204,7 @@ function CommDKP:CreateBidWindow()
   f:SetClampedToScreen(true)
   f:SetBackdrop( {
     bgFile = "Textures\\white.blp", tile = true,                -- White backdrop allows for black background with 1.0 alpha on low alpha containers
-    edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3,
+    edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 3,
     insets = { left = 0, right = 0, top = 0, bottom = 0 }
   });
   f:SetBackdropColor(0,0,0,0.9);
@@ -1244,7 +1244,7 @@ function CommDKP:CreateBidWindow()
   f.closeContainer:SetPoint("CENTER", f, "TOPRIGHT", -4, 0)
   f.closeContainer:SetBackdrop({
     bgFile   = "Textures\\white.blp", tile = true,
-    edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
+    edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
   });
   f.closeContainer:SetBackdropColor(0,0,0,0.9)
   f.closeContainer:SetBackdropBorderColor(1,1,1,0.2)
@@ -1267,7 +1267,7 @@ function CommDKP:CreateBidWindow()
     f.boss:SetTextInsets(10, 15, 5, 5)
     f.boss:SetBackdrop({
         bgFile   = "Textures\\white.blp", tile = true,
-      edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+      edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
     });
     f.boss:SetBackdropColor(0,0,0,0.6)
     f.boss:SetBackdropBorderColor(1,1,1,0.6)
@@ -1329,7 +1329,7 @@ function CommDKP:CreateBidWindow()
       f.minBid:SetSize(70, 28)
       f.minBid:SetBackdrop({
         bgFile   = "Textures\\white.blp", tile = true,
-        edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+        edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
       });
       f.minBid:SetBackdropColor(0,0,0,0.6)
       f.minBid:SetBackdropBorderColor(1,1,1,0.6)
@@ -1390,7 +1390,7 @@ function CommDKP:CreateBidWindow()
       f.maxBid:SetSize(70, 28)
       f.maxBid:SetBackdrop({
         bgFile   = "Textures\\white.blp", tile = true,
-        edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+        edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
       });
       f.maxBid:SetBackdropColor(0,0,0,0.6)
       f.maxBid:SetBackdropBorderColor(1,1,1,0.6)
@@ -1453,7 +1453,7 @@ function CommDKP:CreateBidWindow()
       f.bidTimer:SetSize(70, 28)
       f.bidTimer:SetBackdrop({
         bgFile   = "Textures\\white.blp", tile = true,
-        edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+        edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
       });
       f.bidTimer:SetBackdropColor(0,0,0,0.6)
       f.bidTimer:SetBackdropBorderColor(1,1,1,0.6)
@@ -1493,7 +1493,7 @@ function CommDKP:CreateBidWindow()
     f.bidTimerFooter:SetPoint("LEFT", f.bidTimer, "RIGHT", 5, 0);
     f.bidTimerFooter:SetText(L["SECONDS"])
 
-    f.StartBidding = CreateFrame("Button", "CommDKPBiddingStartBiddingButton", f, "CommunityDKPButtonTemplate")
+    f.StartBidding = CreateFrame("Button", "CommDKPBiddingStartBiddingButton", f, "FiftyFiftyDKPButtonTemplate")
     f.StartBidding:SetPoint("TOPRIGHT", f, "TOPRIGHT", -15, -100);
     f.StartBidding:SetSize(90, 25);
     f.StartBidding:SetText(L["STARTBIDDING"]);
@@ -1558,7 +1558,7 @@ function CommDKP:CreateBidWindow()
       f.bidTable:SetSize(width, height*numrows+3)
     f.bidTable:SetBackdrop({
       bgFile   = "Textures\\white.blp", tile = true,
-      edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
+      edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
     });
     f.bidTable:SetBackdropColor(0,0,0,0.2)
     f.bidTable:SetBackdropBorderColor(1,1,1,0.4)
@@ -1588,7 +1588,7 @@ function CommDKP:CreateBidWindow()
     f.BidTable_Headers:SetPoint("BOTTOMLEFT", f.bidTable, "TOPLEFT", 0, 1)
     f.BidTable_Headers:SetBackdrop({
       bgFile   = "Textures\\white.blp", tile = true,
-      edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
+      edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,
     });
     f.BidTable_Headers:SetBackdropColor(0,0,0,0.8);
     f.BidTable_Headers:SetBackdropBorderColor(1,1,1,0.5)
@@ -1669,7 +1669,7 @@ function CommDKP:CreateBidWindow()
       f.cost:SetTextInsets(10, 10, 5, 5)
       f.cost:SetBackdrop({
         bgFile   = "Textures\\white.blp", tile = true,
-        edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
+        edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile", tile = true, tileSize = 32, edgeSize = 2,
       });
       f.cost:SetBackdropColor(0,0,0,0.6)
       f.cost:SetBackdropBorderColor(1,1,1,0.6)

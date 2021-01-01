@@ -100,9 +100,9 @@ core.EncounterList = {      -- Event IDs must be in the exact same order as core
 }
 
 core.CommDKPUI = {}        -- global storing entire Configuration UI to hide/show UI
-core.MonVersion = "v3.2.3";
-core.BuildNumber = 30203;
-core.ReleaseNumber = 60
+core.MonVersion = "v1.0.0";
+core.BuildNumber = 1;
+core.ReleaseNumber = 1
 core.defaultTable = "__default";
 core.SemVer = core.MonVersion.."-r"..tostring(core.ReleaseNumber);
 core.UpgradeSchema = false;
@@ -159,7 +159,7 @@ function CommDKP:ResetPosition()
 	CommDKP.UIConfig:SetPoint("CENTER", UIParent, "CENTER", -250, 100);
 	CommDKP.UIConfig:SetSize(550, 590);
 	CommDKP.UIConfig.TabMenu:Hide()
-	CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\expand-arrow");
+	CommDKP.UIConfig.expandtab:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\expand-arrow");
 	core.ShowState = false;
 	CommDKP.BidTimer:ClearAllPoints()
 	CommDKP.BidTimer:SetPoint("CENTER", UIParent)
@@ -396,10 +396,10 @@ function CommDKP:FormatTime(time)
 	return str;
 end
 
-function CommDKP:Print(...)        --print function to add "CommunityDKP:" to the beginning of print() outputs.
+function CommDKP:Print(...)        --print function to add "FiftyFiftyDKP:" to the beginning of print() outputs.
 	if core.DB == nil or not core.DB.defaults.SuppressNotifications then
 		local defaults = CommDKP:GetThemeColor();
-		local prefix = string.format("|cff%s%s|r|cff%s", defaults[1].hex:upper(), "CommunityDKP:", defaults[2].hex:upper());
+		local prefix = string.format("|cff%s%s|r|cff%s", defaults[1].hex:upper(), "FiftyFiftyDKP:", defaults[2].hex:upper());
 		local suffix = "|r";
 
 		for i = 1, NUM_CHAT_WINDOWS do
@@ -413,7 +413,7 @@ function CommDKP:Print(...)        --print function to add "CommunityDKP:" to th
 end
 
 function CommDKP:CreateButton(point, relativeFrame, relativePoint, xOffset, yOffset, text)
-	local btn = CreateFrame("Button", nil, relativeFrame, "CommunityDKPButtonTemplate")
+	local btn = CreateFrame("Button", nil, relativeFrame, "FiftyFiftyDKPButtonTemplate")
 	btn:SetPoint(point, relativeFrame, relativePoint, xOffset, yOffset);
 	btn:SetSize(100, 30);
 	btn:SetText(text);
@@ -438,7 +438,7 @@ end
 function CommDKP:CreateContainer(parent, name, header)
 	local f = CreateFrame("Frame", "CommDKP"..name, parent);
 	f:SetBackdrop( {
-		edgeFile = "Interface\\AddOns\\CommunityDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,  
+		edgeFile = "Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\edgefile.tga", tile = true, tileSize = 1, edgeSize = 2,  
 		insets = { left = 0, right = 0, top = 0, bottom = 0 }
 	});
 	f:SetBackdropColor(0,0,0,0.9);
@@ -579,7 +579,7 @@ function CommDKP:StatusVerify_Update()
 		end
 
 		if not core.OOD then
-			CommDKP.DKPTable.SeedVerifyIcon:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\up-to-date")
+			CommDKP.DKPTable.SeedVerifyIcon:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\up-to-date")
 			CommDKP.DKPTable.SeedVerify:SetScript("OnEnter", function(self)
 				GameTooltip:SetOwner(self, "ANCHOR_RIGHT", 0, 0);
 				GameTooltip:SetText(L["DKPSTATUS"], 0.25, 0.75, 0.90, 1, true);
@@ -596,7 +596,7 @@ function CommDKP:StatusVerify_Update()
 
 			return true;
 		else
-			CommDKP.DKPTable.SeedVerifyIcon:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\out-of-date")
+			CommDKP.DKPTable.SeedVerifyIcon:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\out-of-date")
 			CommDKP.DKPTable.SeedVerify:SetScript("OnEnter", function(self)
 				GameTooltip:SetOwner(self, "ANCHOR_RIGHT", 0, 0);
 				GameTooltip:SetText(L["DKPSTATUS"], 0.25, 0.75, 0.90, 1, true);

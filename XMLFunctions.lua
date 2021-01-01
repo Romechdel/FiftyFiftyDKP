@@ -1,4 +1,4 @@
-function CommunityDKPButton_OnLoad(self)
+function FiftyFiftyDKPButton_OnLoad(self)
 	if ( not self:IsEnabled() ) then
 		self.Left:SetTexture("Interface\\Buttons\\UI-Panel-Button-Disabled");
 		self.Middle:SetTexture("Interface\\Buttons\\UI-Panel-Button-Disabled");
@@ -6,38 +6,38 @@ function CommunityDKPButton_OnLoad(self)
 	end
 end
 
-function CommunityDKPButton_OnMouseDown(self)
+function FiftyFiftyDKPButton_OnMouseDown(self)
 	if ( self:IsEnabled() ) then
-		self.Left:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Down");
-		self.Middle:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Down");
-		self.Right:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Down");
+		self.Left:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Down");
+		self.Middle:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Down");
+		self.Right:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Down");
 	end
 end
 
-function CommunityDKPButton_OnMouseUp(self)
+function FiftyFiftyDKPButton_OnMouseUp(self)
 	if ( self:IsEnabled() ) then
-		self.Left:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
-		self.Middle:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
-		self.Right:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
+		self.Left:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
+		self.Middle:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
+		self.Right:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
 	end
 end
 
-function CommunityDKPButton_OnShow(self)
+function FiftyFiftyDKPButton_OnShow(self)
 	if ( self:IsEnabled() ) then
-		self.Left:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
-		self.Middle:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
-		self.Right:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
+		self.Left:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
+		self.Middle:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
+		self.Right:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
 	end
 end
 
-function CommunityDKPButton_OnDisable(self)
+function FiftyFiftyDKPButton_OnDisable(self)
 	self.Left:SetTexture("Interface\\Buttons\\UI-Panel-Button-Disabled");
 	self.Middle:SetTexture("Interface\\Buttons\\UI-Panel-Button-Disabled");
 	self.Right:SetTexture("Interface\\Buttons\\UI-Panel-Button-Disabled");
 end
 
-function CommunityDKPButton_OnEnable(self)
-	self.Left:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
-	self.Middle:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
-	self.Right:SetTexture("Interface\\AddOns\\CommunityDKP\\Media\\Textures\\CommunityDKP-Button-Up");
+function FiftyFiftyDKPButton_OnEnable(self)
+	self.Left:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
+	self.Middle:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
+	self.Right:SetTexture("Interface\\AddOns\\FiftyFiftyDKP\\Media\\Textures\\FiftyFiftyDKP-Button-Up");
 end
